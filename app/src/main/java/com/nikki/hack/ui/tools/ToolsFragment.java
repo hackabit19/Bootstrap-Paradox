@@ -41,7 +41,7 @@ public class ToolsFragment extends Fragment {
 
         listView.setAdapter(adapter);
 
-        return inflater.inflate(R.layout.fragment_tools, container, false);
+        return view;
     }
 
 }
