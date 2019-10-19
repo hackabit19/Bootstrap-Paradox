@@ -1,19 +1,24 @@
 package com.nikki.hack.ui.home;
 
+import android.widget.ImageView;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.nikki.hack.R;
+
 public class HomeViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    //private MutableLiveData<String> mText;
+    private ImageView mImage;
 
     public HomeViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        //mText.setValue("This is home fragment");
+        mImage.setImageResource(R.drawable.ic_menu_gallery);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public ImageView getmImage() {
+        return mImage;
     }
 }
