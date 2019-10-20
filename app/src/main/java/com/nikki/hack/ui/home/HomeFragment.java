@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
@@ -23,26 +24,29 @@ import com.nikki.hack.ViewPagerAdapter;
 public class HomeFragment extends Fragment {
 
 //    private HomeViewModel homeViewModel;
-        Activity context;
+        View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        context = getActivity();
-        return inflater.inflate(R.layout.fragment_home, container, false);
-
+        view = inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
     }
 
+
     @Override
-    public void onStart() {
-        super.onStart();
-        Button btn = (Button)context.findViewById(R.id.btn);
-        
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        Button btn = (Button)view.findViewById(R.id.btn);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ImageSlider.class);
+                Intent intent = new Intent(getActivity(), ImageSlider.class);
                 startActivity(intent);
             }
         });
+        super.onViewCreated(view, savedInstanceState);
     }
+
+    public HomeFragment(){}
 }
