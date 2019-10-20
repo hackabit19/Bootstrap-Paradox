@@ -35,7 +35,7 @@ public class ToolsFragment extends Fragment {
         cars.add("Paypal");
         cars.add("Paytm");
         cars.add("UPI");
-        cars.add("Visa");
+        cars.add("Debit/Credit");
 
         adapter=new CustomAdaptor(getContext(),cars);
 

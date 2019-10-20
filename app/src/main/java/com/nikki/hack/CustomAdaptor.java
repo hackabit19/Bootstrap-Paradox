@@ -47,7 +47,7 @@ public class CustomAdaptor extends ArrayAdapter<String>{
             case "UPI":
                 imageView.setImageResource(R.drawable.upi);
                 break;
-            case "Visa":
+            case "Debit/Credit":
                 imageView.setImageResource(R.drawable.visa);
                 break;
         }
